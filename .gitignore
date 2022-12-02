@@ -1,0 +1,5 @@
+# Project exclude paths
+/RouteService/target/
+/TravelService/target/
+.idea
+*.iml

@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: routeservice
+  namespace: kube-test
+  labels:
+    app: route-service
+spec:
+  containers:
+    - name: route-service
+      image: 172.16.17.37:5000/septemberhx/route-service:v1.0
+      ports:
+        - containerPort: 8082
+      volumeMounts:
+        - mountPath: /var/log/mclient
+          name: log-volume
+      env:
+        - name: MCLUSTER_IP
+          value: "172.16.17.37"
+        - name: MCLUSTER_PORT
+          value: "30761"
+  volumes:
+    - name: log-volume
+      hostPath:
+        path: /data/test-dir/log
