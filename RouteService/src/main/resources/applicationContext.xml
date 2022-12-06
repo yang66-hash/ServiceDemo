@@ -8,6 +8,6 @@
        http://www.wangteng.com/mclient/core/mLogFuncation
        http://www.wangteng.com/mclient/core/mLogFuncation.xsd">
 
-    <myTag:aop-log id="getRouteInfo" logPath="D:/MClientFramework/MClient/info.log" logExtra="Accept,Connection" logBug="true"></myTag:aop-log>
+    <myTag:aop-log id="getRouteInfo" logPath="/MClientFramework/MClient/info.log" logExtra="Accept,Connection" logBug="true"></myTag:aop-log>
 
 </beans>

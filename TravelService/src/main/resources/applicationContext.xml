@@ -8,8 +8,8 @@
        http://www.wangteng.com/mclient/core/mLogFuncation
        http://www.wangteng.com/mclient/core/mLogFuncation.xsd">
 
-    <myTag:aop-log id="getDetailInfo" logPath="D:/MClientFramework/MClient/info.log" logExtra="Accept,Connection" logBug="true"></myTag:aop-log>
-    <myTag:aop-log id="getSeatDistribute" logPath="D:/MClientFramework/MClient/info.log" logExtra="Connection" logBug="true"></myTag:aop-log>
-    <myTag:aop-log id="MController" logPath="D:/MClientFramework/MClient/info.log" logExtra="Connection" logBug="true"></myTag:aop-log>
+    <myTag:aop-log id="getDetailInfo" logPath="/MClientFramework/MClient/info.log" logExtra="Accept,Connection" logBug="true"></myTag:aop-log>
+    <myTag:aop-log id="getSeatDistribute" logPath="/MClientFramework/MClient/info.log" logExtra="Accept,Connection" logBug="true"></myTag:aop-log>
+    <myTag:aop-log id="MController" logPath="/MClientFramework/MClient/info.log" logExtra="Connection" logBug="true"></myTag:aop-log>
 
 </beans>

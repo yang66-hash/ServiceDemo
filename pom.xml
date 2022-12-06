@@ -60,7 +60,7 @@
       <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-actuator</artifactId>
-        <version>2.1.2.RELEASE</version>
+        <version>2.1.6.RELEASE</version>
       </dependency>
       <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
       <dependency>
@@ -106,5 +106,6 @@
     </dependencies>
 
   </dependencyManagement>
+
 
 </project>

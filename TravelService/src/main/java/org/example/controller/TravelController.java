@@ -1,20 +1,15 @@
 package org.example.controller;
 
 import com.septemberhx.common.base.MResponse;
-import com.septemberhx.mclient.annotation.MApiFunction;
-import com.septemberhx.mclient.annotation.MRestApiType;
 import com.wangteng.mclient.annotation.MLogFunction;
 import com.wangteng.mclient.base.MObject;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpHeaders;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
-import java.util.List;
+
 import java.util.Map;
 
 /**
@@ -41,15 +36,15 @@ public class TravelController extends MObject {
      * call the interface in Route Service to get the route info of the traveller
      */
     @MLogFunction
-    @MRestApiType
-    @MApiFunction
+//    @MRestApiType
+//    @MApiFunction
     @ResponseBody
     @GetMapping("/getDetailInfo")
     public MResponse getDetailInfo(@RequestParam(value = "userId") String userId){
         MResponse result = new MResponse();
 
         if (userId.equals("00001")){
-            String url = "http://RouteService/getRouteInfo/?userId={userId}";
+            String url = "http://traceRouteService/getRouteInfo/?userId={userId}";
 //            MultiValueMap<String,Object> multiValueMap = new LinkedMultiValueMap<>();
             Map<String,Object> multiValueMap = new HashMap<>();
             multiValueMap.put("userId",userId);
@@ -72,8 +67,8 @@ public class TravelController extends MObject {
      * @return search the seat info of the traveller by flight
      */
     @MLogFunction
-    @MRestApiType
-    @MApiFunction
+//    @MRestApiType
+//    @MApiFunction
     @ResponseBody
     @GetMapping("/getSeatDistribute")
     public MResponse getSeatDistribute(@RequestParam(value = "flight") String flight){

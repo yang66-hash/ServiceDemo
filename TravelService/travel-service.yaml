@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: travelservice
+  name: tracetravelservice
   namespace: kube-test
   labels:
-    app: travel-service
+    app: tracetravel-service
 spec:
   containers:
-    - name: travel-service
-      image: 172.16.17.37:5000/septemberhx/travel-service:v1.0
+    - name: tracetravel-service
+      image: 172.16.17.37:5000/septemberhx/tracetravel-service:v1.0
       ports:
         - containerPort: 8082
       volumeMounts:

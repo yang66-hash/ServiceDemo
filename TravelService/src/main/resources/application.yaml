@@ -5,10 +5,10 @@ eureka:
     prefer-ip-address: true #以IP地址注册到服务中心，相互注册使用IP地址
   client:
     service-url:
-      defaultZone: http://127.0.0.1:8761/eureka
+      defaultZone: http://172.16.17.37:30761/eureka
     #        http://${MCLUSTER_IP}:${MCLUSTER_PORT}/eureka
     healthcheck:
       enabled: true
 spring:
   application:
-    name: TravelService
+    name: traceTravelService

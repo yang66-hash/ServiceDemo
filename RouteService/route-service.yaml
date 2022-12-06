@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: routeservice
+  name: tracerouteservice
   namespace: kube-test
   labels:
-    app: route-service
+    app: traceroute-service
 spec:
   containers:
-    - name: route-service
-      image: 172.16.17.37:5000/septemberhx/route-service:v1.0
+    - name: traceroute-service
+      image: 172.16.17.37:5000/septemberhx/traceroute-service:v1.0
       ports:
         - containerPort: 8082
       volumeMounts:
