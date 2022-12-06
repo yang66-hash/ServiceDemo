@@ -35,8 +35,9 @@ public class RouteController extends MObject {
      * called by the interface in Travel Service and it also call the function in the travel service
      */
     @MLogFunction
-//    @MRestApiType
-//    @MApiFunction
+    @MRestApiType
+    @MApiFunction
+    @ResponseBody
     @GetMapping("/getRouteInfo")
     public MResponse getRouteInfo(@RequestParam(value = "userId") String useId){
         useId = useId.toLowerCase();

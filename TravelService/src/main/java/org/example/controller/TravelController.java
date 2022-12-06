@@ -34,12 +34,6 @@ public class TravelController extends MObject {
     private RestTemplate restTemplate;
 
 
-//    @MLogFunction
-//    @GetMapping("/test")
-//    public String test(){
-//        return "hello world";
-//    }
-
 
     /**
      * @param
@@ -47,8 +41,9 @@ public class TravelController extends MObject {
      * call the interface in Route Service to get the route info of the traveller
      */
     @MLogFunction
-//    @MRestApiType
-//    @MApiFunction
+    @MRestApiType
+    @MApiFunction
+    @ResponseBody
     @GetMapping("/getDetailInfo")
     public MResponse getDetailInfo(@RequestParam(value = "userId") String userId){
         MResponse result = new MResponse();
@@ -77,8 +72,9 @@ public class TravelController extends MObject {
      * @return search the seat info of the traveller by flight
      */
     @MLogFunction
-//    @MRestApiType
-//    @MApiFunction
+    @MRestApiType
+    @MApiFunction
+    @ResponseBody
     @GetMapping("/getSeatDistribute")
     public MResponse getSeatDistribute(@RequestParam(value = "flight") String flight){
         MResponse result = new MResponse();
