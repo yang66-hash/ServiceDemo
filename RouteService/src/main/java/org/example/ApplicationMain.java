@@ -12,7 +12,8 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  * @date 2022/12/01
  */
 @SpringBootApplication
-@MClient
+//@MClient
+@com.wangteng.mclient.annotation.MClient
 @EnableEurekaClient
 public class ApplicationMain {
     public static void main(String[] args) {

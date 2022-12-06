@@ -37,12 +37,12 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter</artifactId>
-      <exclusions>
-        <exclusion>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-logging</artifactId>
-        </exclusion>
-      </exclusions>
+<!--      <exclusions>-->
+<!--        <exclusion>-->
+<!--          <groupId>org.springframework.boot</groupId>-->
+<!--          <artifactId>spring-boot-starter-logging</artifactId>-->
+<!--        </exclusion>-->
+<!--      </exclusions>-->
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-com.septemberhx.eureka-client -->
     <dependency>
@@ -79,32 +79,37 @@
       <artifactId>joda-time</artifactId>
     </dependency>
 
+<!--    <dependency>-->
+<!--      <groupId>org.springframework.boot</groupId>-->
+<!--      <artifactId>spring-boot-starter-log4j2</artifactId>-->
+<!--    </dependency>-->
+
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-log4j2</artifactId>
+      <groupId>com.wangteng</groupId>
+      <artifactId>MClient</artifactId>
     </dependency>
   </dependencies>
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-        <configuration>
-          <fork>true</fork>
-          <mainClass>org.example.ApplicationMain</mainClass>
-        </configuration>
-        <executions>
-          <execution>
-            <goals>
-              <goal>repackage</goal>
-            </goals>
-            <configuration>
-              <classifier>exec</classifier>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
+<!--  <build>-->
+<!--    <plugins>-->
+<!--      <plugin>-->
+<!--        <groupId>org.springframework.boot</groupId>-->
+<!--        <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--        <configuration>-->
+<!--          <fork>true</fork>-->
+<!--          <mainClass>org.example.ApplicationMain</mainClass>-->
+<!--        </configuration>-->
+<!--        <executions>-->
+<!--          <execution>-->
+<!--            <goals>-->
+<!--              <goal>repackage</goal>-->
+<!--            </goals>-->
+<!--            <configuration>-->
+<!--              <classifier>exec</classifier>-->
+<!--            </configuration>-->
+<!--          </execution>-->
+<!--        </executions>-->
+<!--      </plugin>-->
+<!--    </plugins>-->
+<!--  </build>-->
 </project>
