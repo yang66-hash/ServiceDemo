@@ -38,7 +38,7 @@ public class RouteController extends MObject {
 //    @MRestApiType
 //    @MApiFunction
     @GetMapping("/getRouteInfo")
-    public MResponse getRouteInfo(@RequestParam(value = "userId") String useId,@RequestHeader HttpHeaders httpHeaders){
+    public MResponse getRouteInfo(@RequestParam(value = "userId") String useId){
         useId = useId.toLowerCase();
         MResponse result = new MResponse();
         //id destination

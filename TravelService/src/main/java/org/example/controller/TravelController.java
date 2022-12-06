@@ -34,11 +34,11 @@ public class TravelController extends MObject {
     private RestTemplate restTemplate;
 
 
-    @MLogFunction
-    @GetMapping("/test")
-    public String test(){
-        return "hello world";
-    }
+//    @MLogFunction
+//    @GetMapping("/test")
+//    public String test(){
+//        return "hello world";
+//    }
 
 
     /**
@@ -50,7 +50,7 @@ public class TravelController extends MObject {
 //    @MRestApiType
 //    @MApiFunction
     @GetMapping("/getDetailInfo")
-    public MResponse getDetailInfo(@RequestParam(value = "userId") String userId,@RequestHeader HttpHeaders httpHeaders){
+    public MResponse getDetailInfo(@RequestParam(value = "userId") String userId){
         MResponse result = new MResponse();
 
         if (userId.equals("00001")){
@@ -80,7 +80,7 @@ public class TravelController extends MObject {
 //    @MRestApiType
 //    @MApiFunction
     @GetMapping("/getSeatDistribute")
-    public MResponse getSeatDistribute(@RequestParam(value = "flight") String flight,@RequestHeader HttpHeaders httpHeaders){
+    public MResponse getSeatDistribute(@RequestParam(value = "flight") String flight){
         MResponse result = new MResponse();
         if (flight.equals("MU5542")){
             result.set("seat", "06B");
