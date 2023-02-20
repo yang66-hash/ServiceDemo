@@ -66,11 +66,11 @@
       <artifactId>lombok</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.septemberhx</groupId>
+      <groupId>septemberhx</groupId>
       <artifactId>MClient</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.septemberhx</groupId>
+      <groupId>septemberhx</groupId>
       <artifactId>common</artifactId>
     </dependency>
     <dependency>

@@ -1,16 +1,24 @@
 package org.example.controller;
 
+
 import com.septemberhx.common.base.MResponse;
+import com.netflix.ribbon.proxy.annotation.Http;
 import com.septemberhx.mclient.annotation.MApiFunction;
 import com.septemberhx.mclient.annotation.MRestApiType;
 import com.septemberhx.mclient.base.MObject;
+import org.aspectj.weaver.ast.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
+
 
 import java.util.List;
 
@@ -28,6 +36,12 @@ public class TravelController extends MObject {
 
     @Autowired
     private DiscoveryClient discoveryClient;
+    private String service = "routeservice";
+
+    public String getService() {
+        return service;
+    }
+
 
     /**
      * @param
@@ -38,16 +52,24 @@ public class TravelController extends MObject {
     @MRestApiType
     @MApiFunction
     @PostMapping("/getDetailInfo")
-    public MResponse getDetailInfo(@RequestParam("userId") String userId){
+    public MResponse getDetailInfo(@RequestParam("userId") String userId,@RequestHeader HttpHeaders httpHeaders){
         MResponse result = new MResponse();
 
         if (userId.equals("00001")){
-            String url = "http://RouteService/getRouteInfo";
+
             MultiValueMap<String,Object> multiValueMap = new LinkedMultiValueMap<>();
             multiValueMap.add("userId",userId);
-            MResponse mResponse1 = restTemplate.postForObject(url,multiValueMap,MResponse.class);
-            if (mResponse1.getStatus().equals("Success")){
-                result.setValueMap(mResponse1.getValueMap());
+//            System.out.println("httpHeaders.toSingleValueMap()::"+httpHeaders.toSingleValueMap());
+            String url ;
+            url = "http://"+getService()+"/getRouteInfo";
+
+            HttpEntity httpEntity = new HttpEntity(multiValueMap,httpHeaders);
+            String services ="routeservice";
+            ResponseEntity<MResponse> responseResponseEntity = restTemplate.exchange("http://"+getService("routeservice")+"/getRouteInfo", HttpMethod.POST,httpEntity,MResponse.class);
+
+//            MResponse mResponse1 = restTemplate.postForObject(url,multiValueMap,MResponse.class);
+            if (responseResponseEntity.getBody().getStatus().equals("Success")){
+                result.setValueMap(responseResponseEntity.getBody().getValueMap());
             }
         }
         result.set("name","张三");
@@ -56,6 +78,10 @@ public class TravelController extends MObject {
         return result;
 
 
+    }
+
+    private String getService(String service) {
+        return service;
     }
 
 
@@ -67,7 +93,9 @@ public class TravelController extends MObject {
     @MRestApiType
     @MApiFunction
     @PostMapping("/getSeatDistribute")
-    public MResponse getSeatDistribute(@RequestParam(value = "flight") String flight){
+    public MResponse getSeatDistribute(@RequestParam(value = "flight") String flight, @RequestHeader HttpHeaders httpHeaders){
+//        System.out.println("httpHeaders.toSingleValueMap()::"+httpHeaders.toSingleValueMap());
+
         MResponse result = new MResponse();
         if (flight.equals("MU5542")){
             result.set("seat", "06B");
