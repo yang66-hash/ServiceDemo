@@ -34,13 +34,6 @@ public class TravelController extends MObject {
     @Autowired
     private RestTemplate restTemplate;
 
-    @Autowired
-    private DiscoveryClient discoveryClient;
-    private String service = "routeservice";
-
-    public String getService() {
-        return service;
-    }
 
 
     /**
@@ -48,6 +41,7 @@ public class TravelController extends MObject {
      * @return get the detail info of the traveller by useId
      * call the interface in Route Service to get the route info of the traveller
      */
+    @SuppressWarnings("unchecked")
     @ResponseBody
     @MRestApiType
     @MApiFunction
@@ -59,13 +53,10 @@ public class TravelController extends MObject {
 
             MultiValueMap<String,Object> multiValueMap = new LinkedMultiValueMap<>();
             multiValueMap.add("userId",userId);
-//            System.out.println("httpHeaders.toSingleValueMap()::"+httpHeaders.toSingleValueMap());
-            String url ;
-            url = "http://"+getService()+"/getRouteInfo";
 
             HttpEntity httpEntity = new HttpEntity(multiValueMap,httpHeaders);
             String services ="routeservice";
-            ResponseEntity<MResponse> responseResponseEntity = restTemplate.exchange("http://"+getService("routeservice")+"/getRouteInfo", HttpMethod.POST,httpEntity,MResponse.class);
+            ResponseEntity<MResponse> responseResponseEntity = restTemplate.exchange("http://routeservice/getRouteInfo", HttpMethod.POST,httpEntity,MResponse.class);
 
 //            MResponse mResponse1 = restTemplate.postForObject(url,multiValueMap,MResponse.class);
             if (responseResponseEntity.getBody().getStatus().equals("Success")){
@@ -80,15 +71,11 @@ public class TravelController extends MObject {
 
     }
 
-    private String getService(String service) {
-        return service;
-    }
-
-
     /**
      * @param
      * @return search the seat info of the traveller by flight
      */
+    @SuppressWarnings("unchecked")
     @ResponseBody
     @MRestApiType
     @MApiFunction
