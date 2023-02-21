@@ -15,7 +15,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
-
+@SuppressWarnings("unchecked")
 @RestController
 public class RouteController extends MObject {
 

@@ -27,6 +27,7 @@ import java.util.List;
  * @version 1.0
  * @date 2022/12/01
  */
+@SuppressWarnings("unchecked")
 @RestController
 public class TravelController extends MObject {
 
