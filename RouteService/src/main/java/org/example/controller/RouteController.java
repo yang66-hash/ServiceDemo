@@ -15,7 +15,6 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
-@SuppressWarnings("unchecked")
 @RestController
 public class RouteController extends MObject {
 
@@ -33,7 +32,6 @@ public class RouteController extends MObject {
      *
      * called by the interface in Travel Service and it also call the function in the travel service
      */
-    @SuppressWarnings("unchecked")
     @ResponseBody
     @MRestApiType
     @MApiFunction

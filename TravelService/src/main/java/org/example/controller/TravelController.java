@@ -27,7 +27,6 @@ import java.util.List;
  * @version 1.0
  * @date 2022/12/01
  */
-@SuppressWarnings("unchecked")
 @RestController
 public class TravelController extends MObject {
 
@@ -42,7 +41,6 @@ public class TravelController extends MObject {
      * @return get the detail info of the traveller by useId
      * call the interface in Route Service to get the route info of the traveller
      */
-    @SuppressWarnings("unchecked")
     @ResponseBody
     @MRestApiType
     @MApiFunction
@@ -76,7 +74,6 @@ public class TravelController extends MObject {
      * @param
      * @return search the seat info of the traveller by flight
      */
-    @SuppressWarnings("unchecked")
     @ResponseBody
     @MRestApiType
     @MApiFunction
