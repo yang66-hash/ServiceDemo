@@ -68,7 +68,6 @@
       <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
     </dependency>
 
-
     <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-actuator -->
     <dependency>
       <groupId>org.springframework.boot</groupId>

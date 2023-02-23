@@ -15,9 +15,9 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  * @date 2022/12/01
  */
 @SpringBootApplication
-@ServletComponentScan("com.septemberhx.common.filter")
+//@ServletComponentScan("com.septemberhx.common.filter")
 @MClient
-@EnableEurekaClient
+//@EnableEurekaClient
 public class ApplicationMain extends SpringBootServletInitializer {
     public static void main(String[] args) {
         SpringApplication.run(ApplicationMain.class, args);
