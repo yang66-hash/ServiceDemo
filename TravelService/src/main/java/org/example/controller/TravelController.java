@@ -42,7 +42,6 @@ public class TravelController extends MObject {
      * call the interface in Route Service to get the route info of the traveller
      */
     @ResponseBody
-    @MRestApiType
     @MApiFunction
     @PostMapping("/getDetailInfo")
     public MResponse getDetailInfo(@RequestParam("userId") String userId,@RequestHeader HttpHeaders httpHeaders){
@@ -75,7 +74,6 @@ public class TravelController extends MObject {
      * @return search the seat info of the traveller by flight
      */
     @ResponseBody
-    @MRestApiType
     @MApiFunction
     @PostMapping("/getSeatDistribute")
     public MResponse getSeatDistribute(@RequestParam(value = "flight") String flight, @RequestHeader HttpHeaders httpHeaders){
